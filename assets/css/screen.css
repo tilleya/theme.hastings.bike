@@ -5994,7 +5994,7 @@ div.is-archive-image {
 
 }
 
-/* Overall layout: Two-column grid with a topographic background */
+/* Route Card: Two-column grid with a topographic background */
 .route-page {
   display: grid;
   grid-template-columns: 2fr 1fr;
