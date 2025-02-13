@@ -6056,21 +6056,145 @@ div.is-archive-image {
   }
 }
 
-.stat-item {
-  background: var(--color-five);
-  padding: 1rem;
-  border-radius: var(--border-radius);
-  text-align: center;
-  font-size: clamp(0.8rem, 2.5vw, 1rem);
-  font-family: var(--font-family-three);
-  font-weight: var(--font-weight-three-medium);
-  color: var(--color-font-one);
+/* Stats Section Wrapper (reworked from div.stats) */
+.route-stats {
+  padding: 5% 5%;
+  background: url(../img/v4/topo-bg-3-black.png) top center repeat-y;
+  background-size: 1480px;
+  background-color: #BED3CA;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
 }
 
+/* Grid layout for stats */
+.stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Individual stat item styling */
+.stat-item {
+  flex: 0 0 33%;  /* three items per row */
+  text-align: left;
+  background: no-repeat top right;
+  height: 100px;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Icon styling */
 .stat-item img {
-  width: clamp(24px, 5dvw, 40px);
-  height: auto;
-  margin-bottom: 0.5rem;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+/* Label styling (using your existing typography) */
+.stat-item .stat-label {
+  padding: 0 0 10px 0;
+  margin: 0;
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 1em;
+  color: #848581;
+  text-transform: uppercase;
+}
+
+/* Value styling */
+.stat-item .stat-value {
+  padding: 0;
+  margin: 0;
+  font-size: 36px;
+  font-family: 'font_condensed';
+  line-height: 1em;
+  color: #1A1C18;
+}
+
+/* Difficulty item receives a pointer cursor */
+.stat-item.difficulty {
+  cursor: pointer;
+}
+
+/* Difficulty Tooltip Styling */
+.stat-item.difficulty .difficulty-tooltip {
+  display: none;
+  position: absolute;
+  bottom: 110%; /* places tooltip above the stat item */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #a9c5b9;
+  padding: 15px;
+  border-radius: var(--border-radius);
+  z-index: 10;
+  width: 250px;
+  box-sizing: border-box;
+}
+
+/* Show tooltip on hover */
+.stat-item.difficulty:hover .difficulty-tooltip {
+  display: block;
+}
+
+/* Tooltip inner list */
+.difficulty-tooltip ul {
+  padding: 15px 15px 0 15px;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Each list item in the tooltip */
+.difficulty-tooltip ul li {
+  box-sizing: border-box;
+  flex: 0 0 50%; /* two columns */
+  padding: 0 12px 15px 0;
+  color: #848581;
+  font-family: "proxima-nova-extra-condensed", sans-serif;
+  font-weight: 900;
+  font-size: 13px;
+  line-height: 13px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-align: left;
+  margin: 0;
+}
+
+/* Scale value styling inside tooltip */
+.difficulty-tooltip ul li .scale-value {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #198d8f;
+  color: #bed3ca;
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 15px;
+  text-align: center;
+  padding-top: 6px;
+  margin-right: 6px;
+}
+
+/* Scale description and detail styling */
+.difficulty-tooltip ul li .scale-desc,
+.difficulty-tooltip ul li .scale-detail {
+  font-size: 11px;
+  line-height: 11px;
+  color: #848581;
+  display: inline;
+  margin-left: 4px;
 }
 
 /* Contributor Section Styles */
