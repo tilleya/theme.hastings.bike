@@ -6251,3 +6251,47 @@ div.is-archive-image {
     margin-top: 2rem;
   }
 }
+
+/* =====================================================
+   Updated Icon Paths for Stat Items
+   ===================================================== */
+/* Use updated absolute URLs for background icons if needed */
+.stat-item.distance div,
+.stat-item.distance::before {
+  background-image: url(https://hastings.bike/assets/icons/distance.png);
+}
+
+.stat-item.days div,
+.stat-item.days::before {
+  background-image: url(https://hastings.bike/assets/icons/days.png);
+}
+
+.stat-item.rideability div,
+.stat-item.rideability::before {
+  background-image: url(https://hastings.bike/assets/icons/rideability.png);
+}
+
+.stat-item.unpaved div,
+.stat-item.unpaved::before {
+  background-image: url(https://hastings.bike/assets/icons/pavement.png);
+}
+
+.stat-item.singletrack div,
+.stat-item.singletrack::before {
+  background-image: url(https://hastings.bike/assets/icons/singletrack.png);
+}
+
+.stat-item.ascent div,
+.stat-item.ascent::before {
+  background-image: url(https://hastings.bike/assets/icons/ascent.png);
+}
+
+.stat-item.highpoint div,
+.stat-item.highpoint::before {
+  background-image: url(https://hastings.bike/assets/icons/highpoint.png);
+}
+
+.stat-item.difficulty div,
+.stat-item.difficulty::before {
+  background-image: url(https://hastings.bike/assets/icons/difficulty.png);
+}
