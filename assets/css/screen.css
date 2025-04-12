@@ -6298,10 +6298,10 @@ div.is-archive-image {
 
 .event-card {
     box-sizing: border-box;
-    /* Fallback to vh/vw then upgrade to svh/svw */
     width: 90vw;
     width: 90svw;
     max-width: 800px;
+    /* Increased padding helps keep content equidistant from the card edges */
     padding: 2vh 2vw;
     padding: 2svh 2svw;
     margin: 4vh auto;
@@ -6309,15 +6309,25 @@ div.is-archive-image {
     background-color: var(--color-white);
     border: var(--border) var(--color-border-one);
     border-radius: var(--border-radius);
-    box-shadow: 0 2vh 4vh rgba(0,0,0,0.1);
-    box-shadow: 0 2svh 4svh rgba(0,0,0,0.1);
+    box-shadow: 0 2vh 4vh rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2svh 4svh rgba(0, 0, 0, 0.1);
     font-family: var(--font-family-three);
+  }
+
+  /* Remove extra left/right margin/padding on direct children if needed */
+  .event-card > * {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .event-card .event-date {
     font-size: 2.2vh;
     font-size: 2.2svh;
-    color: var(--color-font-one);
+    /* Use accent background with contrasting text */
+    background-color: var(--ghost-accent-color);
+    color: var(--color-font-two);
     font-family: var(--font-family-three);
     font-weight: var(--font-weight-three-medium);
     letter-spacing: 0.05em;
@@ -6327,21 +6337,26 @@ div.is-archive-image {
     border: 1px solid var(--color-border-one);
     padding: 0.5vh 0.5vw;
     display: inline-block;
+    border-radius: var(--border-radius);
   }
 
   .event-card .event-title {
     font-size: 4.5vh;
     font-size: 4.5svh;
     margin: 0;
-    color: var(--color-font-one);
+    /* Accent the title as well */
+    background-color: var(--ghost-accent-color);
+    color: var(--color-font-two);
     font-family: var(--font-family-one);
     font-weight: var(--font-weight-one-bold);
     letter-spacing: -0.02em;
     line-height: 1.1;
     margin-bottom: 0.5vh;
+    padding: 0.5vh 1vw;
+    border-radius: var(--border-radius);
   }
 
-  /* More compact subtitle spacing */
+  /* Compact subtitle spacing */
   .event-card .event-subtitle {
     font-size: 3vh;
     font-size: 3svh;
@@ -6364,22 +6379,32 @@ div.is-archive-image {
     letter-spacing: 0.03em;
   }
 
-  /* Modern, compact list items */
+  /* List items: compact, modern low line height with increased letter spacing */
   .event-card .event-details li {
     margin-bottom: 0.5vh;
     line-height: 1.2;
     letter-spacing: 0.05em;
   }
 
-  /* Grid container: if both a description and a list exist */
+  /* Wrap list items in a bordered container */
+  .event-card .event-details {
+    border: 1px solid var(--color-border-one);
+    border-radius: var(--border-radius);
+    padding: 1vh 1vw;
+    margin: 0;
+  }
+
+  /* Grid container for description & details; grid width is 100% ensuring text
+     groupings remain equidistant from the card edges */
   .event-content-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2vw;
     align-items: start;
+    width: 100%;
   }
 
-  /* On mobile, revert to one column */
+  /* On mobile, revert to a single column grid */
   @media (max-width: 768px) {
     .event-content-grid {
       grid-template-columns: 1fr;
