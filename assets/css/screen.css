@@ -6295,3 +6295,57 @@ div.is-archive-image {
 .stat-item.difficulty::before {
   background-image: url(https://hastings.bike/assets/icons/difficulty.png);
 }
+
+
+    /* The timeline container (an unordered list) */
+    .timeline {
+      position: relative;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      height: 100%; /* Makes the timeline fill its parent container */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* Evenly spaces out the timeline items */
+    }
+    /* Vertical line drawn down the center */
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      background: #ccc;
+    }
+    /* Style each timeline item */
+    .timeline li {
+      position: relative;
+      /* Optional padding for extra spacing around event content */
+      padding: 10px 0;
+    }
+    /* The bullet (a centered dot) for each timeline item */
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 12px;
+      height: 12px;
+      background: #fff;
+      border: 2px solid #337ab7;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    /* Example content styling */
+    .timeline li span {
+      display: block;
+      text-align: center;
+      margin-top: 5px;
+      font-family: Arial, sans-serif;
+      font-size: 0.9em;
+    }
+  
