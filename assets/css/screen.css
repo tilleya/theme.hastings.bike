@@ -6296,10 +6296,9 @@ div.is-archive-image {
   background-image: url(https://hastings.bike/assets/icons/difficulty.png);
 }
 
-/* Base styles for the event card with viewport unit fallbacks */
-  .event-card {
+.event-card {
     box-sizing: border-box;
-    /* Use fallback units first, then the new ones */
+    /* Fallback to vh/vw then upgrade to svh/svw */
     width: 90vw;
     width: 90svw;
     max-width: 800px;
@@ -6307,44 +6306,52 @@ div.is-archive-image {
     padding: 2svh 2svw;
     margin: 4vh auto;
     margin: 4svh auto;
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 1vw;
-    border-radius: 1svw;
-    box-shadow: 0 2vh 4vh rgba(0, 0, 0, 0.1);
-    box-shadow: 0 2svh 4svh rgba(0, 0, 0, 0.1);
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: var(--color-white); /* Card background */
+    border: var(--border) var(--color-border-one);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2vh 4vh rgba(0,0,0,0.1);
+    box-shadow: 0 2svh 4svh rgba(0,0,0,0.1);
+    /* Body copy for description, etc. */
+    font-family: var(--font-family-three);
   }
 
   .event-card .event-date {
     font-size: 2.5vh;
     font-size: 2.5svh;
-    color: #666;
+    color: var(--color-font-one);
     margin-bottom: 1vh;
     margin-bottom: 1svh;
+    font-family: var(--font-family-three);
+    font-weight: var(--font-weight-three-regular);
   }
 
   .event-card .event-title {
     font-size: 4vh;
     font-size: 4svh;
     margin: 0;
-    color: #333;
+    color: var(--color-font-one);
+    font-family: var(--font-family-one);
+    font-weight: var(--font-weight-one-bold);
   }
 
   .event-card .event-subtitle {
     font-size: 3vh;
     font-size: 3svh;
-    color: #555;
+    color: var(--color-font-one);
     margin: 0.5vh 0 1.5vh;
     margin: 0.5svh 0 1.5svh;
+    font-family: var(--font-family-one);
+    font-weight: var(--font-weight-one-light);
   }
 
   .event-card .event-description,
   .event-card .event-details {
     font-size: 2.5vh;
     font-size: 2.5svh;
-    color: #444;
+    color: var(--color-font-one);
     line-height: 1.5;
+    font-family: var(--font-family-three);
+    font-weight: var(--font-weight-three-regular);
   }
 
   .event-card .event-details {
@@ -6357,8 +6364,8 @@ div.is-archive-image {
     margin-bottom: 1svh;
   }
 
-  /* Responsive adjustments with largest viewport units (lvh/lvw) */
-  @media (max-width: 600vw) {
+  /* Responsive adjustments using largest viewport units */
+  @media (max-width: 600lvw) {
     .event-card {
       padding: 2lvh 2lvw;
     }
