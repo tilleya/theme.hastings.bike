@@ -6306,52 +6306,62 @@ div.is-archive-image {
     padding: 2svh 2svw;
     margin: 4vh auto;
     margin: 4svh auto;
-    background-color: var(--color-white); /* Card background */
+    background-color: var(--color-white); /* Uses theme background */
     border: var(--border) var(--color-border-one);
     border-radius: var(--border-radius);
-    box-shadow: 0 2vh 4vh rgba(0,0,0,0.1);
-    box-shadow: 0 2svh 4svh rgba(0,0,0,0.1);
-    /* Body copy for description, etc. */
+    box-shadow: 0 2vh 4vh rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2svh 4svh rgba(0, 0, 0, 0.1);
     font-family: var(--font-family-three);
   }
 
+  /* Date styled as a subtle, uppercase caption */
   .event-card .event-date {
-    font-size: 2.5vh;
-    font-size: 2.5svh;
+    font-size: 2.2vh;
+    font-size: 2.2svh;
     color: var(--color-font-one);
+    font-family: var(--font-family-three);
+    font-weight: var(--font-weight-three-medium);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     margin-bottom: 1vh;
     margin-bottom: 1svh;
-    font-family: var(--font-family-three);
-    font-weight: var(--font-weight-three-regular);
   }
 
+  /* Title establishes the primary hierarchy */
   .event-card .event-title {
-    font-size: 4vh;
-    font-size: 4svh;
+    font-size: 4.5vh;
+    font-size: 4.5svh;
     margin: 0;
     color: var(--color-font-one);
     font-family: var(--font-family-one);
     font-weight: var(--font-weight-one-bold);
+    letter-spacing: -0.02em; /* Tight letter spacing for a headline impact */
+    line-height: 1.1;
+    margin-bottom: 0.5vh;
   }
 
+  /* Subtitle reinforces hierarchy using lighter weight and increased spacing */
   .event-card .event-subtitle {
     font-size: 3vh;
     font-size: 3svh;
     color: var(--color-font-one);
-    margin: 0.5vh 0 1.5vh;
-    margin: 0.5svh 0 1.5svh;
     font-family: var(--font-family-one);
     font-weight: var(--font-weight-one-light);
+    letter-spacing: 0.01em;
+    margin: 0.5vh 0 1.5vh;
+    line-height: 1.3;
   }
 
+  /* Description and details use comfortable line spacing and subtle letter spacing */
   .event-card .event-description,
   .event-card .event-details {
     font-size: 2.5vh;
     font-size: 2.5svh;
     color: var(--color-font-one);
-    line-height: 1.5;
     font-family: var(--font-family-three);
     font-weight: var(--font-weight-three-regular);
+    line-height: 1.6;
+    letter-spacing: 0.03em;
   }
 
   .event-card .event-details {
