@@ -24,7 +24,7 @@
     {{>members/subscribe_form is_box=true}}
   {{/match}}
  	{{#get posts filter="tags:event" limit="all"}} 
- 	{{#foreach posts from="1" to="2"}}
+ 	{{#foreach posts}}
     {{#if @site.members_enabled}}
       {{#if @member}}
         {{>item show_excerpt=true is_top=true}}
