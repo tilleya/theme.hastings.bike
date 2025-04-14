@@ -21,7 +21,7 @@
 		{{^match @custom.hero_options "Subscribe form"}}
 		{{>members/subscribe_form is_box=true}}
 		{{/match}}
-		{{#get posts filter="tag:Event" as |event|}}
+		{{#get posts filter="tag:Event" include="excerpt" order="published_at desc" as |event|}}
 		{{#foreach event}}
 		{{>item show_excerpt=true show_all_option=true is_top=true}}
 		{{/foreach}}
