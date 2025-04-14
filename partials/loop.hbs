@@ -1,4 +1,5 @@
 <div class="loop-section global-padding">
+	{{#get posts filter="tags:-event" limit='all'}}
 	{{#if is_archive}}
 	{{^if label}}
 	<small class="global-subtitle">{{#if is_featured}}{{plural pagination.total empty=(t "No posts") singular=(t "1 featured post") plural=(t "% featured posts")}}{{else}}{{plural pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}{{/if}}</small>
@@ -14,9 +15,7 @@
 	{{else}}
 	{{^is "paged"}}
 	<small class="global-subtitle">{{t "What’s new?"}}</small>
-	
 	<div class="loop-wrap is-top">
-{{#get posts filter="tags:-event" limit='all'}}
   {{#foreach posts to="1"}}
     {{>item show_excerpt=true show_all_option=true is_first=true is_top=true}}
   {{/foreach}}
@@ -38,7 +37,6 @@
       {{>item show_excerpt=true is_top=true}}
     {{/if}}
   {{/foreach}}
-
 </div>
 	{{>featured}}
 	{{#foreach posts from="4" to="4"}}
@@ -48,9 +46,7 @@
 		{{#foreach posts from="4"}}
 		{{>item show_excerpt=true}}
 		{{/foreach}}
-		{{/get}}
 	</div>
-	
 	{{else}}
 	<div class="loop-wrap">
 		{{#foreach posts}}
@@ -59,4 +55,5 @@
 	</div>
 	{{/is}}
 	{{/if}}
+	{{/get}}
 </div>
