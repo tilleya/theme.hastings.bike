@@ -16,7 +16,7 @@
 	{{^is "paged"}}
 	<small class="global-subtitle">{{t "What’s new?"}}</small>
 	<div class="loop-wrap is-top">
-		{{#foreach posts to="1"}}
+		{{#foreach posts}}
 		{{^has tag="events"}}
 		{{>item show_excerpt=true show_all_option=true is_first=true is_top=true}}
 		{{/has}}
