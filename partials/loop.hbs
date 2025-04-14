@@ -21,20 +21,14 @@
 		{{^match @custom.hero_options "Subscribe form"}}
 		{{>members/subscribe_form is_box=true}}
 		{{/match}}
-		{{#get posts filter="tag:event"}}
-		{{#foreach posts}}
+		{{#get posts filter="tag:event" as |event|}}
+		{{#foreach event from="1" to="3"}}
 		{{#if @site.members_enabled}}
-		{{#if @member}}
-		{{>item show_excerpt=true is_top=true}}
-		{{else}}
 		{{^match @custom.hero_options "Subscribe form"}}
-		{{>item show_excerpt=false is_top=true}}
-		{{else}}
-		{{>item show_excerpt=true is_top=true}}
+		{{>item show_excerpt=false show_all_option=true is_first=false is_top=true}}
 		{{/match}}
-		{{/if}}
 		{{else}}
-		{{>item show_excerpt=true is_top=true}}
+		{{>item show_excerpt=true show_all_option=true is_first=false is_top=true}}
 		{{/if}}
 		{{/foreach}}
 		{{/get}}
