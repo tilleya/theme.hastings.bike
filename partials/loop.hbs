@@ -21,7 +21,7 @@
 		{{^match @custom.hero_options "Subscribe form"}}
 		{{>members/subscribe_form is_box=true}}
 		{{/match}}
-		{{#get posts filter="tag:event" limit="3"}}
+		{{#get posts filter="tag:event"}}
 		{{#foreach posts from="1" to="3"}}
 		{{#if @site.members_enabled}}
 		{{#if @member}}
