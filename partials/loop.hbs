@@ -21,7 +21,7 @@
 		{{^match @custom.hero_options "Subscribe form"}}
 		{{>members/subscribe_form is_box=true}}
 		{{/match}}
-		{{#get posts filter="tag:event" as |event|}}
+		{{#get posts filter="tag:hash-event" as |event|}}
 		{{#foreach event from="1" to="3"}}
 		{{#if @site.members_enabled}}
 		{{^match @custom.hero_options "Subscribe form"}}
