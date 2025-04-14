@@ -14,8 +14,9 @@
 	{{else}}
 	{{^is "paged"}}
 	<small class="global-subtitle">{{t "What’s new?"}}</small>
+	{{#get posts filter="tags:-event" limit='all'}}
 	<div class="loop-wrap is-top">
-  {{#foreach posts filter="tags:-event" to="1"}}
+  {{#foreach posts to="1"}}
     {{>item show_excerpt=true show_all_option=true is_first=true is_top=true}}
   {{/foreach}}
   {{^match @custom.hero_options "Subscribe form"}}
@@ -36,6 +37,7 @@
       {{>item show_excerpt=true is_top=true}}
     {{/if}}
   {{/foreach}}
+
 </div>
 	{{>featured}}
 	{{#foreach posts from="4" to="4"}}
@@ -46,6 +48,7 @@
 		{{>item show_excerpt=true}}
 		{{/foreach}}
 	</div>
+	{{/get}}
 	{{else}}
 	<div class="loop-wrap">
 		{{#foreach posts}}
