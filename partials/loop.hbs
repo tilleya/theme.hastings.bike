@@ -1,5 +1,5 @@
 <div class="loop-section global-padding">
-	{{#get posts filter="tags:-event" limit='all'}}
+	{{#get posts filter="tags:-event" limit="all"}}
 	{{#if is_archive}}
 	{{^if label}}
 	<small class="global-subtitle">{{#if is_featured}}{{plural pagination.total empty=(t "No posts") singular=(t "1 featured post") plural=(t "% featured posts")}}{{else}}{{plural pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}{{/if}}</small>
