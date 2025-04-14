@@ -21,15 +21,9 @@
 		{{^match @custom.hero_options "Subscribe form"}}
 		{{>members/subscribe_form is_box=true}}
 		{{/match}}
-		{{#get posts filter="tags:Event" as |event|}}
+		{{#get posts filter="tag:Event" as |event|}}
 		{{#foreach event}}
-		{{#if @site.members_enabled}}
-		{{^match @custom.hero_options "Subscribe form"}}
-		{{>item show_excerpt=false show_all_option=true is_first=false is_top=true}}
-		{{/match}}
-		{{else}}
-		{{>item show_excerpt=true show_all_option=true is_first=false is_top=true}}
-		{{/if}}
+		{{>item show_excerpt=true show_all_option=true is_top=true}}
 		{{/foreach}}
 		{{/get}}
 	</div>
