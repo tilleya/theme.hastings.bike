@@ -22,7 +22,7 @@
 		{{^match @custom.hero_options "Subscribe form"}}
 		{{>members/subscribe_form is_box=true}}
 		{{/match}}
-		{{#foreach posts tags}}
+		{{#foreach posts}}
 		{{#has tag="event"}}
 		{{#if @site.members_enabled}}
 		{{has tag="event"}}
