@@ -1,4 +1,5 @@
 <div class="loop-section global-padding">
+	
 	{{#if is_archive}}
 	{{^if label}}
 	<small class="global-subtitle">{{#if is_featured}}{{plural pagination.total empty=(t "No posts") singular=(t "1 featured post") plural=(t "% featured posts")}}{{else}}{{plural pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}{{/if}}</small>
@@ -22,6 +23,7 @@
 		{{>members/subscribe_form is_box=true}}
 		{{/match}}
 		{{#foreach posts from="2" to="3"}}
+		{{has tag="event" }}
 		{{#if @site.members_enabled}}
 		{{#if @member}}
 		{{>item show_excerpt=true is_top=true}}
@@ -35,6 +37,7 @@
 		{{else}}
 		{{>item show_excerpt=true is_top=true}}
 		{{/if}}
+		{{/has}}
 		{{/foreach}}
 	</div>>featured}}
 	{{#foreach posts from="4" to="4"}}
