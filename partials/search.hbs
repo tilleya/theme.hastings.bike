@@ -40,15 +40,15 @@ const options = {
 {{#if is_hero}}
 {{#match @custom.hero_options "Search box (Flat style)"}}
 <div class="hero-search is-flat{{#if @custom.content_api_key_for_search}} search-open"{{else}}" data-ghost-search{{/if}}>
-	<span>{{#if @custom.content_api_key_for_search}}{{t "Click here to search for posts"}}{{else}}{{t "Look up a road name, route name, or town!"}}{{/if}}</span><span class="global-dynamic-color">{{>icons/site/search}}</span>
+	<span>{{#if @custom.content_api_key_for_search}}{{t "Click here to search for routes"}}{{else}}{{t "Look up a road name, route name, or town!"}}{{/if}}</span><span class="global-dynamic-color">{{>icons/site/search}}</span>
 </div>
 {{else match @custom.hero_options "Search box (Shadow style)"}}
 <div class="hero-search is-shadow{{#if @custom.content_api_key_for_search}} search-open"{{else}}" data-ghost-search{{/if}}>
-	<span>{{#if @custom.content_api_key_for_search}}{{t "Click here to search for posts"}}{{else}}{{t "Look up a road name, route name, or town!"}}{{/if}}</span><span class="global-dynamic-color">{{>icons/site/search}}</span>
+	<span>{{#if @custom.content_api_key_for_search}}{{t "Click here to search for routes"}}{{else}}{{t "Look up a road name, route name, or town!"}}{{/if}}</span><span class="global-dynamic-color">{{>icons/site/search}}</span>
 </div>
 {{else match @custom.hero_options "Search box (Linear style)"}}
 <div class="hero-search is-linear{{#if @custom.content_api_key_for_search}} search-open"{{else}}" data-ghost-search{{/if}}>
-	<span>{{#if @custom.content_api_key_for_search}}{{t "Click here to search for posts"}}{{else}}{{t "Look up a road name, route name, or town!"}}{{/if}}</span><span class="global-dynamic-color">{{>icons/site/search}}</span>
+	<span>{{#if @custom.content_api_key_for_search}}{{t "Click here to search for routes"}}{{else}}{{t "Look up a road name, route name, or town!"}}{{/if}}</span><span class="global-dynamic-color">{{>icons/site/search}}</span>
 </div>
 {{/match}}
 {{/if}}
