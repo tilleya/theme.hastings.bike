@@ -16,11 +16,9 @@
 	{{^is "paged"}}
 	<small class="global-subtitle">{{t "What’s new?"}}</small>
 	<div class="loop-wrap is-top">
-		{{#get posts "tag:-events"}}
+		{{#get "posts" "tag:-events"}}
 		{{#foreach posts}}
-		{{^has tag="events"}}
 		{{>item show_excerpt=true show_all_option=true is_first=true is_top=true}}
-		{{/has}}
 		{{/foreach}}
 		{{/get}}
 		{{^match @custom.hero_options "Subscribe form"}}
