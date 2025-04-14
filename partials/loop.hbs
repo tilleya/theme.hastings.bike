@@ -22,15 +22,15 @@
 		{{>members/subscribe_form is_box=true}}
 		{{/match}}
 		{{#get posts filter="tags:Event" as |event|}}
-		{{#foreach event from="0" to="1"}}
-		{{#if @site.members_enabled}}
-		{{^match @custom.hero_options "Subscribe form"}}
-		{{>item show_excerpt=false show_all_option=true is_first=false is_top=true}}
-		{{/match}}
-		{{else}}
-		{{>item show_excerpt=true show_all_option=true is_first=false is_top=true}}
-		{{/if}}
-		{{/foreach}}
+			{{#foreach event from="0" to="1"}}
+			{{#if @site.members_enabled}}
+			{{^match @custom.hero_options "Subscribe form"}}
+			{{>item show_excerpt=false show_all_option=true is_first=false is_top=true}}
+			{{/match}}
+			{{else}}
+			{{>item show_excerpt=true show_all_option=true is_first=false is_top=true}}
+			{{/if}}
+			{{/foreach}}
 		{{/get}}
 	</div>
 	{{>featured}}
