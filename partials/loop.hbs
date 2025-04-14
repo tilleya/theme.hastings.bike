@@ -17,7 +17,7 @@
 	<small class="global-subtitle">{{t "What’s new?"}}</small>
 	<div class="loop-wrap is-top">
 		{{#foreach posts from="1" to="3"}}
-		{{^has tag="events"}}
+		{{^has tag="hash-events"}}
 		{{>item show_excerpt=true show_all_option=true is_first=true is_top=true}}
 		{{/has}}
 		{{/foreach}}
@@ -25,7 +25,7 @@
 		{{>members/subscribe_form is_box=true}}
 		{{/match}}
 		{{#foreach posts}}
-		{{#has tag="events"}}
+		{{#has tag="hash-events"}}
 		{{#if @site.members_enabled}}
 		{{#if @member}}
 		{{>item show_excerpt=true is_top=true}}
