@@ -16,10 +16,10 @@
 	<small class="global-subtitle">{{t "What’s new?"}}</small>
 	<div class="loop-wrap is-top">
   {{#get posts filter="tags:-event" limit="all"}}
-  {{#foreach posts to="1"}}
-    {{>item show_excerpt=true show_all_option=true is_first=true is_top=true}}
-  {{/foreach}}
-    {{/get}}
+	{{#foreach posts to="2"}}
+    	{{>item show_excerpt=true show_all_option=true is_first=true is_top=true}}
+	{{/foreach}}
+  {{/get}}
   {{^match @custom.hero_options "Subscribe form"}}
     {{>members/subscribe_form is_box=true}}
   {{/match}}
