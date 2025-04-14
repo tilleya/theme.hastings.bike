@@ -23,7 +23,8 @@
   {{^match @custom.hero_options "Subscribe form"}}
     {{>members/subscribe_form is_box=true}}
   {{/match}}
-  {{#foreach posts from="2" to="3"}}
+ 	{{#get posts filter="tags:event" limit="all"}} 
+ 	{{#foreach posts from="2" to="3"}}
     {{#if @site.members_enabled}}
       {{#if @member}}
         {{>item show_excerpt=true is_top=true}}
@@ -38,6 +39,7 @@
       {{>item show_excerpt=true is_top=true}}
     {{/if}}
   {{/foreach}}
+  {{/get}}
 </div>
 	{{>featured}}
 	{{#foreach posts from="4" to="4"}}
