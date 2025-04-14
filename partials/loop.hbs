@@ -23,6 +23,7 @@
 		{{>members/subscribe_form is_box=true}}
 		{{/match}}
 		{{#foreach posts tags}}
+		{{#has tag="event"}}
 		{{#if @site.members_enabled}}
 		{{has tag="event"}}
 		{{#if @member}}
@@ -36,8 +37,8 @@
 		{{/if}}
 		{{else}}
 		{{>item show_excerpt=true is_top=true}}
-		{{/has}}
 		{{/if}}
+		{{/has}}
 		{{/foreach}}
 	</div>>featured}}
 	{{#foreach posts from="4" to="4"}}
