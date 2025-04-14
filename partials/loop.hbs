@@ -15,33 +15,28 @@
 	{{^is "paged"}}
 	<small class="global-subtitle">{{t "What’s new?"}}</small>
 	<div class="loop-wrap is-top">
-  {{#get posts filter="tags:-event" limit="all"}}
-	{{#foreach posts to="1"}}
-    	{{>item show_excerpt=true show_all_option=true is_first=true is_top=true}}
-	{{/foreach}}
-  {{/get}}
-  {{^match @custom.hero_options "Subscribe form"}}
-    {{>members/subscribe_form is_box=true}}
-  {{/match}}
- 	{{#get posts filter="tags:event" limit="all"}} 
- 	{{#foreach posts}}
-    {{#if @site.members_enabled}}
-      {{#if @member}}
-        {{>item show_excerpt=true is_top=true}}
-      {{else}}
-        {{^match @custom.hero_options "Subscribe form"}}
-          {{>item show_excerpt=false is_top=true}}
-      {{else}}
-        {{>item show_excerpt=true is_top=true}}
-        {{/match}}
-      {{/if}}
-    {{else}}
-      {{>item show_excerpt=true is_top=true}}
-    {{/if}}
-  {{/foreach}}
-  {{/get}}
-</div>
-	{{>featured}}
+		{{#foreach posts to="1"}}
+		{{>item show_excerpt=true show_all_option=true is_first=true is_top=true}}
+		{{/foreach}}
+		{{^match @custom.hero_options "Subscribe form"}}
+		{{>members/subscribe_form is_box=true}}
+		{{/match}}
+		{{#foreach posts from="2" to="3"}}
+		{{#if @site.members_enabled}}
+		{{#if @member}}
+		{{>item show_excerpt=true is_top=true}}
+		{{else}}
+		{{^match @custom.hero_options "Subscribe form"}}
+		{{>item show_excerpt=false is_top=true}}
+		{{else}}
+		{{>item show_excerpt=true is_top=true}}
+		{{/match}}
+		{{/if}}
+		{{else}}
+		{{>item show_excerpt=true is_top=true}}
+		{{/if}}
+		{{/foreach}}
+	</div>>featured}}
 	{{#foreach posts from="4" to="4"}}
 	<small class="loop-subtitle global-subtitle">{{t "Previous posts"}}</small>
 	{{/foreach}}
@@ -59,4 +54,4 @@
 	{{/is}}
 	{{/if}}
 
-</div>
+</iv>
