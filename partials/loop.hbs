@@ -13,9 +13,9 @@
 	</div>
 	{{else}}
 	{{^is "paged"}}
-	{{#get posts filter="tags:-event" limit="all"}}
 	<small class="global-subtitle">{{t "What’s new?"}}</small>
 	<div class="loop-wrap is-top">
+  {{#get posts filter="tags:-event" limit="all"}}
   {{#foreach posts to="1"}}
     {{>item show_excerpt=true show_all_option=true is_first=true is_top=true}}
   {{/foreach}}
@@ -37,6 +37,7 @@
       {{>item show_excerpt=true is_top=true}}
     {{/if}}
   {{/foreach}}
+  {{/get}}
 </div>
 	{{>featured}}
 	{{#foreach posts from="4" to="4"}}
@@ -53,7 +54,6 @@
 		{{>item show_excerpt=true}}
 		{{/foreach}}
 	</div>
-	{{/get}}
 	{{/is}}
 	{{/if}}
 
