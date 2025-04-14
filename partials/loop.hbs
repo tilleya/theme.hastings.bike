@@ -18,10 +18,10 @@
 		{{#foreach posts to="1"}}
 		{{>item show_excerpt=true show_all_option=true is_first=true is_top=true}}
 		{{/foreach}}
+		{{#get posts filter="tag:event"}}
 		{{^match @custom.hero_options "Subscribe form"}}
 		{{>members/subscribe_form is_box=true}}
 		{{/match}}
-		{{#get posts filter="tag:event"}}
 		{{#foreach posts from="1" to="3"}}
 		{{#if @site.members_enabled}}
 		{{#if @member}}
