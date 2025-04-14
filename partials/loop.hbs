@@ -18,6 +18,9 @@
 		{{#foreach posts to="1"}}
 		{{>item show_excerpt=true show_all_option=true is_first=true is_top=true}}
 		{{/foreach}}
+
+	</div>
+	<div class="loop-wrap is-top">
 		{{^match @custom.hero_options "Subscribe form"}}
 		{{>members/subscribe_form is_box=true}}
 		{{/match}}
