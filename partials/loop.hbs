@@ -19,10 +19,11 @@
   {{#foreach posts to="1"}}
     {{>item show_excerpt=true show_all_option=true is_first=true is_top=true}}
   {{/foreach}}
+    {{/get}}
   {{^match @custom.hero_options "Subscribe form"}}
     {{>members/subscribe_form is_box=true}}
   {{/match}}
-  {{#foreach posts filter="tags:-events" from="2" to="3"}}
+  {{#foreach posts from="2" to="3"}}
     {{#if @site.members_enabled}}
       {{#if @member}}
         {{>item show_excerpt=true is_top=true}}
@@ -37,7 +38,6 @@
       {{>item show_excerpt=true is_top=true}}
     {{/if}}
   {{/foreach}}
-  {{/get}}
 </div>
 	{{>featured}}
 	{{#foreach posts from="4" to="4"}}
