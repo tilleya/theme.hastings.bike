@@ -26,8 +26,7 @@
 		{{^match @custom.hero_options "Subscribe form"}}
 		{{>members/subscribe_form is_box=true}}
 		{{/match}}
-		<div><small class="global-subtitle">Events</small></div>
-		{{#get 'posts' filter='tag:hash-events' include='tags' limit='2' }}
+		{{#get 'posts' filter='tag:hash-events' include='tags' limit='3' }}
 		{{#foreach posts}}
 	
 		{{#if @site.members_enabled}}
