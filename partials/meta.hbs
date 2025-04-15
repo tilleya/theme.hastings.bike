@@ -31,7 +31,10 @@
 		</div>
 		{{/if}}
 		{{#is "post"}}
+		{{#has tag="-events"}}
 		<time datetime="{{date format="YYYY-MM-DD"}}"><span>{{date published_at format="LL"}} ∙ </span>{{reading_time minute=(t "1 minute read") minutes=(t "% minutes read")}}</time>
+		{{else}}
+		{{/has}}
 		{{else}}
 		{{#if @custom.show_author}}
 		<time datetime="{{date format="YYYY-MM-DD"}}"><span>{{date published_at format="LL"}} ∙ </span>{{reading_time minute=(t "1 minute read") minutes=(t "% minutes read")}}</time>
