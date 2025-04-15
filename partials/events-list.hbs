@@ -1,4 +1,6 @@
 {{!-- partial: partials/events-list.hbs --}}
+{{!< default}}
+{{#post}}
 {{#get "posts" filter="tag:events" include="tags,authors" limit="all"}}
   <section class="events-list">
     <ul class="events-items">
@@ -16,6 +18,7 @@
     </ul>
   </section>
 {{/get}}
+{{/post}}
 
 <!-- 
 */ <style>
