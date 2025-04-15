@@ -1,7 +1,6 @@
 {{!-- partial: partials/events-list.hbs --}}
 {{#get "posts" filter="tag:events" include="tags,authors" limit="all"}}
   <section class="events-list">
-    <h2 class="events-title">Upcoming Events</h2>
     <ul class="events-items">
       {{#foreach posts}}
         <li class="event-item">
