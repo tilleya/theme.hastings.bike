@@ -30,7 +30,7 @@
           {{!-- Begin Events List Section --}}
           {{#get "posts" filter="tag:event" include="tags,authors" limit="all"}}
             <section class="events-list">
-              <h1 class="events-title">{{tag:name}}</h1>
+              <h1 class="events-title">{{tag:description}}</h1>
               <ul class="events-items">
                 {{#foreach posts}}
                   <li class="event-item">
