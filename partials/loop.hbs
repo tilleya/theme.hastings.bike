@@ -26,6 +26,7 @@
 		{{^match @custom.hero_options "Subscribe form"}}
 		{{>members/subscribe_form is_box=true}}
 		{{/match}}
+		<small class="global-subtitle">{{t "Events}}</small>
 		{{#get 'posts' filter='tag:hash-events' include='tags' limit='3' }}
 		{{#foreach posts}}
 	
