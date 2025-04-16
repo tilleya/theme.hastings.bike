@@ -540,7 +540,12 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
    font-size: 1.2rem;
    font-weight: var(--font-weight-three-medium);
    line-height: 1.1;
-   
+    margin-bottom: var(--grid-gap);
+   -webkit-animation: slideTop .8s ease;
+   animation: slideTop .8s ease;
+   gap: var(--grid-gap);
+   grid-auto-columns: 1fr;
+   grid-gap: var(--grid-gap);
    letter-spacing: 1px;
    text-transform: uppercase;
    grid-column: span 4;
