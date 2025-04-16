@@ -543,9 +543,8 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
    display: block;
    letter-spacing: 1px;
    text-transform: uppercase;
-   grid-column: span 4;
-   }
-
+   grid-column: 1 / -1; /* Span the entire width of the grid */
+}
 /* Link overlay
    –––––––––––––––––––––––––––––––––––––––––––––––––––– */
 .global-link {
