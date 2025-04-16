@@ -1,0 +1,24 @@
+{{!< default}}
+{{#post}}
+{{#match @page.show_title_and_feature_image}}
+{{>posts/header is_custom=true}}
+{{/match}}
+<div class="custom-archive global-padding">
+	<small class="global-subtitle">{{t "Events in Hastings County"}}</small>
+	 {{#get "posts" filter="tag:event" include="tags,authors" limit="all"}}
+            <section class="events-list">
+              <h1 class="events-title">{{title}}</h1>
+              <ul class="events-items">
+                {{#foreach posts}}
+                  <li class="event-item">
+                    <a href="{{url}}" class="event-link">
+                      <h2 class="event-title">{{title}}</h2>
+                    </a>
+                    <h3 class="event-excerpt">{{excerpt}}</h3>
+                  </li>
+                {{/foreach}}
+              </ul>
+            </section>
+          {{/get}}
+</div>
+{{/post}}
