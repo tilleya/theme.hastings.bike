@@ -1,68 +1,73 @@
 <div class="loop-section global-padding">
-	
-	{{#if is_archive}}
-	{{^if label}}
-	<small class="global-subtitle">{{#if is_featured}}{{plural pagination.total empty=(t "No posts") singular=(t "1 featured post") plural=(t "% featured posts")}}{{else}}{{plural pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}{{/if}}</small>
-	{{/if}}
-	{{#if label}}
-	<small class="global-subtitle">{{label}}</small>
-	{{/if}}
-	<div class="loop-wrap">
-		{{#foreach posts}}
-		{{>item show_excerpt=true}}
-		{{/foreach}}
-	</div>
-	{{else}}
-	{{^is "paged"}}
-	<small class="global-subtitle">{{t "What’s new?"}}</small>
-	<div class="loop-wrap is-top">
-		{{#get 'posts' filter='tag:-hash-events' include='tags' limit='1' }}
-		{{#foreach posts}}
-		{{^has tag="-hash-events"}}
-		{{>item show_excerpt=true show_all_option=true is_first=true is_top=true}}
-		{{/has}}
-		{{/foreach}}
-		{{/get}}
-		{{^match @custom.hero_options "Subscribe form"}}
-		{{>members/subscribe_form is_box=true}}
-		{{/match}}
-		
-		{{#get 'posts' filter='tag:hash-events' include='tags' limit='3' }}
-		{{#foreach posts}}
-	
-		{{#if @site.members_enabled}}
-		{{#if @member}}
-		{{>item show_excerpt=true is_top=true}}
-		{{else}}
-		{{^match @custom.hero_options "Subscribe form"}}
-		{{>item show_excerpt=false is_top=true}}
-		{{else}}
-		{{>item show_excerpt=true show_all_option=true is_top=true}}
-		{{/match}}
-		{{/if}}
-		{{else}}
-		{{>item show_excerpt=true show_all_option=true is_top=true}}
-		{{/if}}
+  {{#if is_archive}}
+    {{^if label}}
+      <small class="global-subtitle">
+        {{#if is_featured}}
+          {{plural pagination.total empty=(t "No posts") singular=(t "1 featured post") plural=(t "% featured posts")}}
+        {{else}}
+          {{plural pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}
+        {{/if}}
+      </small>
+    {{/if}}
+    {{#if label}}
+      <small class="global-subtitle">{{label}}</small>
+    {{/if}}
+    <div class="loop-wrap">
+      {{#foreach posts}}
+        {{>item show_excerpt=true}}
+      {{/foreach}}
+    </div>
+  {{else}}
+    {{^is "paged"}}
+      <small class="global-subtitle">{{t "What’s new?"}}</small>
+      <div class="loop-wrap is-top">
+        {{#get 'posts' filter='tag:-hash-events' include='tags' limit='1' }}
+          {{#foreach posts}}
+            {{^has tag="-hash-events"}}
+              {{>item show_excerpt=true show_all_option=true is_first=true is_top=true}}
+            {{/has}}
+          {{/foreach}}
+        {{/get}}
+        {{^match @custom.hero_options "Subscribe form"}}
+          {{>members/subscribe_form is_box=true}}
+        {{/match}}
 
-		{{/foreach}}
-		{{/get}}
-	</div>
-	{{>featured}}
-	{{#foreach posts from="4" to="4"}}
-	<small class="loop-subtitle global-subtitle">{{t "Previous posts"}}</small>
-	{{/foreach}}
-	<div class="loop-wrap">
-		{{#foreach posts from="4"}}
-		{{>item show_excerpt=true}}
-		{{/foreach}}
-	</div>
-	{{else}}
-	<div class="loop-wrap">
-		{{#foreach posts}}
-		{{>item show_excerpt=true}}
-		{{/foreach}}
-	</div>
-	{{/is}}
-	{{/if}}
+        {{!-- Add the Events subtitle before displaying Event posts --}}
+        <small class="global-subtitle">{{t "Events"}}</small>
 
+        {{#get 'posts' filter='tag:hash-events' include='tags' limit='3' }}
+          {{#foreach posts}}
+            {{#if @site.members_enabled}}
+              {{#if @member}}
+                {{>item show_excerpt=true is_top=true}}
+              {{else}}
+                {{^match @custom.hero_options "Subscribe form"}}
+                  {{>item show_excerpt=false is_top=true}}
+                {{else}}
+                  {{>item show_excerpt=true is_top=true}}
+                {{/match}}
+              {{/if}}
+            {{else}}
+              {{>item show_excerpt=true is_top=true}}
+            {{/if}}
+          {{/foreach}}
+        {{/get}}
+      </div>
+      {{>featured}}
+      {{#foreach posts from="4" to="4"}}
+        <small class="loop-subtitle global-subtitle">{{t "Previous posts"}}</small>
+      {{/foreach}}
+      <div class="loop-wrap">
+        {{#foreach posts from="4"}}
+          {{>item show_excerpt=true}}
+        {{/foreach}}
+      </div>
+    {{else}}
+      <div class="loop-wrap">
+        {{#foreach posts}}
+          {{>item show_excerpt=true}}
+        {{/foreach}}
+      </div>
+    {{/is}}
+  {{/if}}
 </div>
