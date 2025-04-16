@@ -37,11 +37,11 @@
 		{{^match @custom.hero_options "Subscribe form"}}
 		{{>item show_excerpt=false is_top=true}}
 		{{else}}
-		{{>item show_excerpt=true is_top=true}}
+		{{>item show_excerpt=true show_all_option=true is_top=true}}
 		{{/match}}
 		{{/if}}
 		{{else}}
-		{{>item show_excerpt=true is_top=true}}
+		{{>item show_excerpt=true show_all_option=true is_top=true}}
 		{{/if}}
 
 		{{/foreach}}
