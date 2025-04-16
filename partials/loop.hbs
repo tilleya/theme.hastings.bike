@@ -33,7 +33,7 @@
         {{/match}}
 
         {{!-- Add the Events subtitle before displaying Event posts --}}
-        <small class="global-subtitle">{{t "Events"}}</small>
+        <span class="global-subtitle">{{t "Events"}}</span>
 
         {{#get 'posts' filter='tag:hash-events' include='tags' limit='3' }}
           {{#foreach posts}}
