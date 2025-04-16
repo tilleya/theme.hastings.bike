@@ -543,10 +543,8 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
    display: block;
    letter-spacing: 1px;
    text-transform: uppercase;
-   grid-column: span 3
-   display: flex;
-   align-items: flex-start;
-}
+   grid-column: span 4
+   }
 
 /* Link overlay
    –––––––––––––––––––––––––––––––––––––––––––––––––––– */
