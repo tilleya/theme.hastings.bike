@@ -9,11 +9,14 @@
 	</a>
 	{{/if}}
 	<div class="item-content">
+		<small class="global-subtitle">{{section_title}}</small>
 		{{^if is_special}}
 		{{^if is_featured}}
+		{{!--
 		<div class="item-tags global-tags">
 			{{>members/visibility_label}}{{#if tags}}{{#has visibility="public"}}{{tags limit="3" separator=""}}{{else}}{{tags limit="2" separator=""}}{{/has}}{{/if}}
 		</div>
+		--}}
 		{{/if}}
 		{{/if}}
 		<h2 class="item-title"><a href="{{url}}">{{title}}</a></h2>
