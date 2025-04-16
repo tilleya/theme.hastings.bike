@@ -4,9 +4,10 @@
 {{>posts/header is_custom=true}}
 {{/match}}
 <div class="custom-archive global-padding">
-	<small class="global-subtitle">{{t "Upcoming Events"}}</small>
+	
 	 {{#get "posts" filter="tag:event" include="tags,authors" limit="all"}}
             <section class="events-list">
+            <small class="global-subtitle">{{t "Upcoming Events"}}</small>
               <h1 class="events-title">{{title}}</h1>
               <ul class="events-items">
                 {{#foreach posts}}
