@@ -541,10 +541,11 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
    font-weight: var(--font-weight-three-medium);
    line-height: 1.1;
    display: block;
+   margin: 0 0 1em;
    letter-spacing: 1px;
    text-transform: uppercase;
-   grid-column: span 6;
-   }
+   grid-column: span 6
+}
 
 /* Link overlay
    –––––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -2020,11 +2021,6 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
 
 .loop-subtitle {
    display: none;
-}
-
-.sidebar {
-	display: grid;
-	grid-column: 13 / -1; /* This also spans columns 13 through 18 */
 }
 
 /* Image
@@ -6301,3 +6297,134 @@ div.is-archive-image {
   background-image: url(https://hastings.bike/assets/icons/difficulty.png);
 }
 
+  event-card {
+    box-sizing: border-box;
+    /* Fallback to vh/vw, then newer units */
+    width: 90vw;
+    width: 90svw;
+    max-width: 800px;
+    margin: 4vh auto;
+    margin: 4svh auto;
+    padding: 2vh 2vw;
+    padding: 2svh 2svw;
+    background-color: var(--color-white);
+    border: var(--border) var(--color-border-one);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2vh 4vh rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2svh 4svh rgba(0, 0, 0, 0.1);
+    font-family: var(--font-family-three);
+    color: var(--color-font-one);
+    line-height: 1.6; /* Improve legibility */
+  }
+
+  /* Date styling */
+  .event-card .event-date {
+    font-size: 2svh;
+    font-size: 2vh; /* fallback */
+    font-weight: var(--font-weight-three-medium);
+    opacity: 0.85; /* Slightly subdued to set it apart */
+    margin-bottom: 1vh;
+    margin-bottom: 1svh;
+    display: block;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* Title (Primary heading) */
+  .event-card .event-title {
+    margin: 0 0 0.5em 0;
+    font-size: 3.5svh;
+    font-size: 3.5vh; /* fallback */
+    font-weight: var(--font-weight-one-bold);
+    font-family: var(--font-family-one);
+    line-height: 1.3;
+    color: var(--color-font-one);
+  }
+
+  /* Subtitle (Secondary heading) */
+  .event-card .event-subtitle {
+    margin: 0 0 2vh 0;
+    margin: 0 0 2svh 0;
+    font-size: 2.3svh;
+    font-size: 2.3vh; /* fallback */
+    font-family: var(--font-family-one);
+    font-weight: var(--font-weight-one-light);
+    opacity: 0.95;
+    line-height: 1.3;
+  }
+
+  /* Paragraph / Description text */
+  .event-card .event-description,
+  .event-card .event-details {
+    font-size: 2svh;
+    font-size: 2vh; /* fallback */
+    font-family: var(--font-family-three);
+    font-weight: var(--font-weight-three-regular);
+    line-height: 1.6;
+    margin-bottom: 2vh;
+    margin-bottom: 2svh;
+  }
+
+  /* List styles for details */
+  .event-card .event-details {
+    padding-left: 1vw;
+    padding-left: 1svw;
+    list-style-type: none;
+    margin: 0;
+  }
+
+  .event-card .event-details li {
+    margin-bottom: 1vh;
+    margin-bottom: 1svh;
+    padding-left: 1.5em; /* Indent for clarity */
+    position: relative;
+  }
+
+  .event-card .event-details li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--ghost-accent-color);
+    font-size: 1.5em;
+    line-height: 1;
+    top: 0;
+  }
+
+  /* CTA button */
+  .event-card .event-cta {
+    display: inline-block;
+    margin-top: 2vh;
+    margin-top: 2svh;
+    padding: 1vh 2vw;
+    padding: 1svh 2svw;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--ghost-accent-color);
+    color: var(--color-font-white);
+    font-family: var(--font-family-three);
+    font-weight: var(--font-weight-three-bold);
+    font-size: 2svh;
+    font-size: 2vh; /* fallback */
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.1s ease, filter 0.2s ease;
+  }
+
+  .event-card .event-cta:hover {
+    filter: brightness(1.08);
+    transform: scale(1.02);
+  }
+
+  /* Responsive adjustments: largest viewport units (lvh, lvw) */
+  @media (max-width: 600lvw) {
+    .event-card {
+      padding: 2lvh 2lvw;
+    }
+    .event-card .event-title {
+      font-size: 3lvh;
+    }
+    .event-card .event-subtitle {
+      font-size: 2lvh;
+    }
+  }
