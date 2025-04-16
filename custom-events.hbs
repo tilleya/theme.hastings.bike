@@ -27,6 +27,7 @@
       <div class="global-content">
         {{>header}}
         <main class="global-main">
+        {{{body}}}
           {{!-- Begin Events List Section --}}
           {{#get "posts" filter="tag:event" include="tags,authors" limit="all"}}
             <section class="events-list">
