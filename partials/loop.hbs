@@ -28,14 +28,13 @@
             {{/has}}
           {{/foreach}}
         {{/get}}
-        </div>
-        <div class="sidebar">
+       
         {{^match @custom.hero_options "Subscribe form"}}
           {{>members/subscribe_form is_box=true}}
         {{/match}}
 		
         {{!-- Add the Events subtitle before displaying Event posts --}}
-        <span class="global-subtitle">{{t "Events"}}</span>
+        <span class="loop-subtitle global-subtitle">{{t "Events"}}</span>
 		
         {{#get 'posts' filter='tag:hash-events' include='tags' limit='3' }}
           {{#foreach posts}}
