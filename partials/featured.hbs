@@ -5,8 +5,8 @@
 <small class="global-subtitle">{{t "Featured posts"}}</small>
 <div class="featured-section global-radius{{#match @custom.style_for_featured_section "Gray"}} is-gray{{else match @custom.style_for_featured_section "Accent color"}} global-dynamic-color is-accent{{else match @custom.style_for_featured_section "Accent color/Gray"}} is-accent-gray{{else match @custom.style_for_featured_section "Gray/Accent color"}} is-gray-accent{{/match}}">
 	{{#foreach featured to="1"}}{{>images/background_cover custom_cover=feature_image is_featured=true}}{{/foreach}}
-	<small class="featured-subtitle{{#match @custom.style_for_featured_section "Accent color/Gray"}} global-dynamic-color{{/match}}">{{t "Hastings’s Choice"}}</small>
-	<h2 class="featured-title{{#match @custom.style_for_featured_section "Accent color/Gray"}} global-dynamic-color{{/match}}">{{t "The Story Starts Here:"}}</h2>
+	<small class="featured-subtitle{{#match @custom.style_for_featured_section "Accent color/Gray"}} global-dynamic-color{{/match}}">{{t "Stories from Hastings County"}}</small>
+	<h2 class="featured-title{{#match @custom.style_for_featured_section "Accent color/Gray"}} global-dynamic-color{{/match}}">{{t "Your Journey Starts Here:"}}</h2>
 	<div class="featured-content{{#foreach posts}}{{#if @last}} items-{{@number}}{{/if}}{{/foreach}}{{#match @custom.style_for_featured_section "Gray/Accent color"}} global-dynamic-color{{/match}}">
 		{{#foreach featured}}
 		{{>item show_excerpt=false is_featured=true}}
@@ -24,8 +24,8 @@
 <small class="global-subtitle">{{t "Featured posts"}}</small>
 <div class="featured-section global-radius{{#match @custom.style_for_featured_section "Gray"}} is-gray{{else match @custom.style_for_featured_section "Accent color"}} global-dynamic-color is-accent{{else match @custom.style_for_featured_section "Accent color/Gray"}} is-accent-gray{{else match @custom.style_for_featured_section "Gray/Accent color"}} is-gray-accent{{/match}}">
 	{{#foreach featured to="1"}}{{>images/background_cover custom_cover=feature_image is_featured=true}}{{/foreach}}
-	<small class="featured-subtitle{{#match @custom.style_for_featured_section "Accent color/Gray"}} global-dynamic-color{{/match}}">{{t "Hastings’s Choice"}}</small>
-	<h2 class="featured-title{{#match @custom.style_for_featured_section "Accent color/Gray"}} global-dynamic-color{{/match}}">{{t "The Story Starts Here:"}}</h2>
+	<small class="featured-subtitle{{#match @custom.style_for_featured_section "Accent color/Gray"}} global-dynamic-color{{/match}}">{{t "Stories from Hastings County"}}</small>
+	<h2 class="featured-title{{#match @custom.style_for_featured_section "Accent color/Gray"}} global-dynamic-color{{/match}}">{{t "Your Journey Starts Here:"}}</h2>
 	<div class="featured-content{{#foreach posts}}{{#if @last}} items-{{@number}}{{/if}}{{/foreach}}{{#match @custom.style_for_featured_section "Gray/Accent color"}} global-dynamic-color{{/match}}">
 		{{#foreach featured}}
 		{{>item show_excerpt=false is_featured=true}}
