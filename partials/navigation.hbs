@@ -2,10 +2,10 @@
 
 {{^if isSecondary}}
 <ul>
-	{{#foreach navigation to="3"}}
+	{{#foreach navigation to="4"}}
 	<li><a href="{{url absolute="true"}}"{{#if current}} class="is-active"{{/if}}>{{label}}</a></li>
 	{{/foreach}}
-	{{#foreach navigation from="4"}}
+	{{#foreach navigation from="5"}}
 	{{#if @first}}
 	<li class="is-dropdown">
 		<span>{{>icons/site/dots}}</span>
@@ -28,7 +28,7 @@
 {{! Footer navigation }}
 
 
-{{#foreach navigation limit="4"}}
+{{#foreach navigation limit="5"}}
 {{#if @first}}
 <div class="footer-nav-column">
 	<small>{{t "Column 1"}}</small>
@@ -41,7 +41,7 @@
 {{/if}}
 {{/foreach}}
 
-{{#foreach navigation limit="4" from="5"}}
+{{#foreach navigation limit="4" from="6"}}
 {{#if @first}}
 <div class="footer-nav-column">
 	<small>{{t "Column 2"}}</small>
@@ -54,7 +54,7 @@
 {{/if}}
 {{/foreach}}
 
-{{#foreach navigation limit="4" from="9"}}
+{{#foreach navigation limit="4" from="10"}}
 {{#if @first}}
 <div class="footer-nav-column">
 	<small>{{t "Column 3"}}</small>
@@ -67,7 +67,7 @@
 {{/if}}
 {{/foreach}}
 
-{{#foreach navigation limit="4" from="13"}}
+{{#foreach navigation limit="4" from="14"}}
 {{#if @first}}
 <div class="footer-nav-column">
 	<small>{{t "Column 4"}}</small>
@@ -80,7 +80,7 @@
 {{/if}}
 {{/foreach}}
 
-{{#foreach navigation from="17"}}
+{{#foreach navigation from="18"}}
 {{#if @first}}
 <div class="footer-nav-column">
 	<small>{{t "Column 5"}}</small>
