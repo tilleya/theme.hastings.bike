@@ -23,20 +23,23 @@
 		<h2 class="item-title"><a href="{{url}}">{{title}}</a></h2>
 		{{^if is_special}}
 		{{^if is_featured}}
-{{!-- Hide the excerpt only if the post is tagged #poi --}}
-{{#has tag="hash-poi"}}
-  {{!-- Do nothing – we still render the feature image elsewhere --}}
-{{else}}
-  {{#has any="custom_excerpt,excerpt"}}
-    {{#unless feature_image}}
-      <p class="item-excerpt global-excerpt no-image">
-        {{#if custom_excerpt}}{{custom_excerpt}}{{else if excerpt}}{{excerpt}}...{{/if}}
-      </p>
-    {{else if show_excerpt}}
-      <p class="item-excerpt global-excerpt">
-        {{#if custom_excerpt}}{{custom_excerpt}}{{else if excerpt}}{{excerpt}}...{{/if}}
-      </p>
-    {{/unless}}
+		{{!-- 1. Always render your feature image wherever you do that… --}}
+{{#if feature_image}}
+  <img src="{{feature_image}}" alt="{{title}}">
+{{/if}}
+
+{{!-- 2. Excerpt comes only if there's text AND the post is NOT tagged #poi --}}
+{{#has any="custom_excerpt,excerpt"}}
+  {{#has tag="hash-poi"}}
+    {{!-- skip excerpt for #poi --}}
+  {{else}}
+    <p class="item-excerpt global-excerpt{{unless feature_image}} no-image{{/unless}}">
+      {{#if custom_excerpt}}
+        {{custom_excerpt}}
+      {{else}}
+        {{excerpt}}...
+      {{/if}}
+    </p>
   {{/has}}
 {{/has}}
 		{{/if}}
