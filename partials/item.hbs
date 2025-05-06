@@ -24,7 +24,7 @@
 		{{^if is_special}}
 		{{^if is_featured}}
 {{!-- Hide the excerpt only if the post is tagged #poi --}}
-{{#has tag="#poi"}}
+{{#has tag="hash-poi"}}
   {{!-- Do nothing – we still render the feature image elsewhere --}}
 {{else}}
   {{#has any="custom_excerpt,excerpt"}}
