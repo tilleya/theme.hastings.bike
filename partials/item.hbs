@@ -4,12 +4,13 @@
 	<a href="{{url}}" class="global-link" aria-label="{{title}}"></a>
 	{{/if}}
 	{{#if feature_image}}
+	<small class="global-subtitle">{{section_title}}</small>
 	<a href="{{url}}" class="item-image global-image global-image-orientation global-radius">
 		{{>images/loop_image}}
 	</a>
 	{{/if}}
 	<div class="item-content">
-		<small class="global-subtitle">{{section_title}}</small>
+		{{^if feature_image}}<small class="global-subtitle">{{section_title}}</small>{{/if}}
 		{{^if is_special}}
 		{{^if is_featured}}
 		{{!--
