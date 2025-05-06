@@ -24,7 +24,7 @@
 		{{^if is_special}}
 		{{^if is_featured}}
 		{{#has any="excerpt,custom_excerpt"}}
-		{{#unless tag="hash-poi"}}
+		{{^has tag="hash-poi"}}
 		<p class="item-excerpt global-excerpt no-image">
 			{{#if custom_excerpt}}{{custom_excerpt}}{{else if excerpt}}{{excerpt}}...{{/if}}
 		</p>
@@ -33,7 +33,7 @@
 		<p class="item-excerpt global-excerpt">
 			{{#if custom_excerpt}}{{custom_excerpt}}{{else if excerpt}}{{excerpt}}...{{/if}}
 		</p>
-		{{/unless}}
+		{{/has}}
 		{{/has}}
 		{{/if}}
 		{{/if}}
