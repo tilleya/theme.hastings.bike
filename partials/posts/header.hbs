@@ -31,9 +31,9 @@
 			{{#if custom_excerpt}}
 			<p class="post-excerpt global-excerpt">{{custom_excerpt}}</p>
 			{{else if featured_page}}
-			<p class="post-excerpt global-excerpt">{{t "A curated list of the most interesting thoughts, stories and ideas"}}</p>
+			<p class="post-excerpt global-excerpt">{{t "A curated list of the best gravel cycling and bikepacking routes in the area."}}</p>
 			{{else if membership_page}}
-			<p class="post-excerpt global-excerpt">{{t "Unlock full access to {site-title} and see the entire library of subscribers-only content & updates" site-title=@site.title}}</p>
+			<p class="post-excerpt global-excerpt">{{t "Join {site-title} and we'll update you with new routes, events and happenings around Hastings County" site-title=@site.title}}</p>
 			{{/if}}
 			{{#if tags}}<div class="post-tags global-tags">{{tags limit="all" separator=""}}</div>{{/if}}
 			{{^if archive_page}}
