@@ -28,6 +28,39 @@
             {{/has}}
           {{/foreach}}
         {{/get}}
+         {{#get 'posts' filter='tag:hash-POI' include='tags,authors' limit='1' }}
+          {{#foreach posts from="1"}}
+            {{#if @site.members_enabled}}
+              {{#if @member}}
+                {{#if @first}}
+                  {{>item show_excerpt=true is_top=true section_title="Featured Business"}}
+                {{else}}
+                  {{>item show_excerpt=true is_top=true}}
+                {{/if}}
+              {{else}}
+                {{^match @custom.hero_options "Subscribe form"}}
+                  {{#if @first}}
+                    {{>item show_excerpt=false is_top=true section_title="Featured Business"}}
+                  {{else}}
+                    {{>item show_excerpt=false is_top=true}}
+                  {{/if}}
+                {{else}}
+                  {{#if @first}}
+                    {{>item show_excerpt=true is_top=true section_title="Featured Business"}}
+                  {{else}}
+                    {{>item show_excerpt=true is_top=true}}
+                  {{/if}}
+                {{/match}}
+              {{/if}}
+            {{else}}
+              {{#if @first}}
+                {{>item show_excerpt=true is_top=true section_title="Featured Business"}}
+              {{else}}
+                {{>item show_excerpt=true is_top=true}}
+              {{/if}}
+            {{/if}}
+          {{/foreach}}
+        {{/get}}
        
         {{^match @custom.hero_options "Subscribe form"}}
           {{>members/subscribe_form is_box=true}}
@@ -68,39 +101,7 @@
             {{/if}}
           {{/foreach}}
         {{/get}}
-         {{#get 'posts' filter='tag:hash-POI' include='tags,authors' limit='1' }}
-          {{#foreach posts from="1"}}
-            {{#if @site.members_enabled}}
-              {{#if @member}}
-                {{#if @first}}
-                  {{>item show_excerpt=true is_top=true section_title="Featured Business"}}
-                {{else}}
-                  {{>item show_excerpt=true is_top=true}}
-                {{/if}}
-              {{else}}
-                {{^match @custom.hero_options "Subscribe form"}}
-                  {{#if @first}}
-                    {{>item show_excerpt=false is_top=true section_title="Featured Business"}}
-                  {{else}}
-                    {{>item show_excerpt=false is_top=true}}
-                  {{/if}}
-                {{else}}
-                  {{#if @first}}
-                    {{>item show_excerpt=true is_top=true section_title="Featured Business"}}
-                  {{else}}
-                    {{>item show_excerpt=true is_top=true}}
-                  {{/if}}
-                {{/match}}
-              {{/if}}
-            {{else}}
-              {{#if @first}}
-                {{>item show_excerpt=true is_top=true section_title="Featured Business"}}
-              {{else}}
-                {{>item show_excerpt=true is_top=true}}
-              {{/if}}
-            {{/if}}
-          {{/foreach}}
-        {{/get}}
+        
         </div>
       {{>featured}}
       {{#foreach posts from="4" to="4"}}
