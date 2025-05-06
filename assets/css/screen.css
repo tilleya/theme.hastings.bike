@@ -2134,7 +2134,6 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
 .section-subtitle-image {
   display: flex;            /* turn on flex */
   flex-direction: column;   /* stack children vertically */
-  align-items: center;      /* center subtitle + img horizontally */
 }
 
 /* optional spacing */
