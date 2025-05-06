@@ -436,7 +436,7 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
    width: 100%;
    margin: 0;
    transition: transform .3s ease;
-   aspect-ratio: 4/2.8;
+   aspect-ratio: 3/2;
 }
 
 .global-image-orientation > img {
