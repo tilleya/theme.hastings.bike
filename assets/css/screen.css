@@ -2131,6 +2131,18 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
    -webkit-line-clamp: 10;
 }
 
+.section-subtitle-image {
+  display: flex;            /* turn on flex */
+  flex-direction: column;   /* stack children vertically */
+  align-items: center;      /* center subtitle + img horizontally */
+}
+
+/* optional spacing */
+.section-subtitle-image .subtitle {
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
 /* Animation
    –––––––––––––––––––––––––––––––––––––––––––––––––––– */
 @-webkit-keyframes slideTop {
