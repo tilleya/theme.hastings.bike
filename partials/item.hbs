@@ -23,20 +23,18 @@
 		<h2 class="item-title"><a href="{{url}}">{{title}}</a></h2>
 		{{^if is_special}}
 		{{^if is_featured}}
-		 {{#has any="custom_excerpt,excerpt"}}
-    {{#has tag="#poi"}}
-      {{!-- skip excerpt for #poi posts --}}
-    {{else}}
-      <p class="item-excerpt global-excerpt{{unless feature_image}} no-image{{/unless}}">
-        {{#if custom_excerpt}}
-          {{custom_excerpt}}
-        {{else}}
-          {{excerpt}}...
-        {{/if}}
-      </p>
-    {{/has}}
-  {{/has}}
-
+		{{#has any="excerpt,custom_excerpt"}}
+		{{#unless tag="hash-poi"}}
+		<p class="item-excerpt global-excerpt no-image">
+			{{#if custom_excerpt}}{{custom_excerpt}}{{else if excerpt}}{{excerpt}}...{{/if}}
+		</p>
+		{{else if show_excerpt}}
+		<p class="item-excerpt global-excerpt">
+			{{#if custom_excerpt}}{{custom_excerpt}}{{else if excerpt}}{{excerpt}}...{{/if}}
+		</p>
+		{{/unless}}
+		{{/has}}
+		{{/if}}
 		{{/if}}
 		{{>meta}}
 	</div>
