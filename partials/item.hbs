@@ -23,7 +23,7 @@
 		<h2 class="item-title"><a href="{{url}}">{{title}}</a></h2>
 		{{^if is_special}}
 		{{^if is_featured}}
-		{{#has any="excerpt,custom_excerpt"}}
+		{{#has any="excerpt,custom_excerpt" tags="-hash-POI"}}
 		{{#unless feature_image}}
 		<p class="item-excerpt global-excerpt no-image">
 			{{#if custom_excerpt}}{{custom_excerpt}}{{else if excerpt}}{{excerpt}}...{{/if}}
