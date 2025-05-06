@@ -436,7 +436,7 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
    width: 100%;
    margin: 0;
    transition: transform .3s ease;
-   aspect-ratio: 3/2;
+   aspect-ratio: 16/9;
 }
 
 .global-image-orientation > img {
@@ -529,7 +529,7 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
 /* Title
    –––––––––––––––––––––––––––––––––––––––––––––––––––– */
 .global-title {
-   font-size: 5.6rem;
+   font-size: 4.6rem;
    line-height: 1.2;
    margin: 0;
 }
@@ -537,7 +537,7 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
 /* Subtitle
    –––––––––––––––––––––––––––––––––––––––––––––––––––– */
 .global-subtitle {
-   font-size: 1.2rem;
+   font-size: 1.1rem;
    font-weight: var(--font-weight-three-medium);
    line-height: 1.1;
    display: block;
