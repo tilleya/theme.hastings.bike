@@ -25,7 +25,7 @@
 		{{^if is_featured}}
 		{{#has any="excerpt,custom_excerpt"}}
 		{{#unless feature_image}}
-		<p class="item-excerpt global-excerpt no-image">
+		<p class="item-excerpt global-excerpt">
 			{{#if custom_excerpt}}{{custom_excerpt}}{{else if excerpt}}{{excerpt}}...{{/if}}
 		</p>
 		{{else if show_excerpt}}
