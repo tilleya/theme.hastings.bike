@@ -8,7 +8,7 @@
 		</div>
 	</div>
 </div>
-{{#get "posts" limit="3" filter="feature_image:-null+tags:-[hash-events,hash-POI]" include="authors,tags,tiers" as |special_posts|}}
+{{#get "posts" limit="3" filter="feature_image:-null+tags:-[hash-events,hash-POI,routes]" include="authors,tags,tiers" as |special_posts|}}
 	{{#if special_posts}}
 		{{>loop is_archive=true label=(t "Check out the latest posts")}}
 	{{/if}}
