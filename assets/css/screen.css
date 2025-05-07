@@ -2266,7 +2266,7 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
       border-bottom: var(--border) var(--color-border-one);
    }
    
-   .item.is-top {
+  .item:not(.is-top.is-first):not(.custom-archive-item) {
   	 margin-bottom: 0;
    	 display:grid;
   	 grid-template-columns: 2fr 4fr;
