@@ -2278,7 +2278,7 @@ body.is-white-text .global-button:not(.no-color),body.is-white-text .global-dyna
    .item-subtitle
    	{ grid-area: 1 / 1 / 2 / 2; }
    	
-   	.item-image
+   	.item.is-top .item-image
    	{ grid-area: 2 / 1 / 3 / 2; }
 
    .loop-wrap .item:not(.is-top.is-first):not(.custom-archive-item) {
